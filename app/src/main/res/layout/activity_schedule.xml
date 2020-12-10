@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Features.ScheduleActivity">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/ScheduleBack"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/Banner"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@mipmap/back"/>
+
+    <View
+        android:id="@+id/ScheduleOptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/round_panel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ScheduleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/AddSchedule"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintRight_toRightOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toTopOf="@id/ScheduleOptions" />
+
+    <TextView
+        android:id="@+id/ScheduleTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/ScheduleTitle"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleTitle" />
+
+    <EditText
+        android:id="@+id/ScheduleTitleInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/ScheduleTitle"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintLeft_toRightOf="@id/ScheduleTitleLabel"
+        app:layout_constraintRight_toRightOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleTitle" />
+
+    <TextView
+        android:id="@+id/ScheduleSubtitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/ScheduleSubtitle"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleTitleLabel" />
+
+    <EditText
+        android:id="@+id/ScheduleSubtitleInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/ScheduleSubtitle"
+        android:inputType="text"
+        android:maxLines="1"
+        app:layout_constraintLeft_toRightOf="@id/ScheduleSubtitleLabel"
+        app:layout_constraintRight_toRightOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleTitleInput" />
+
+    <TextView
+        android:id="@+id/ScheduleImportanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/Importance"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleSubtitleLabel" />
+
+    <Spinner
+        android:id="@+id/ScheduleImportanceSpinner"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/round_panel"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toRightOf="@id/ScheduleImportanceLabel"
+        app:layout_constraintRight_toRightOf="@id/ScheduleOptions"
+        app:layout_constraintTop_toBottomOf="@id/ScheduleSubtitleInput" />
+
+    <Button
+        android:id="@+id/ScheduleImportBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/round_panel"
+        android:text="@string/ImportSheet"
+        app:layout_constraintBottom_toBottomOf="@id/ScheduleOptions"
+        app:layout_constraintLeft_toLeftOf="@id/ScheduleOptions"
+        app:layout_constraintRight_toLeftOf="@id/ScheduleFinishBtn" />
+
+    <Button
+        android:id="@+id/ScheduleFinishBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/round_panel"
+        android:text="@string/Arrange"
+        app:layout_constraintBottom_toBottomOf="@id/ScheduleOptions"
+        app:layout_constraintLeft_toRightOf="@id/ScheduleImportBtn"
+        app:layout_constraintRight_toRightOf="@id/ScheduleOptions" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

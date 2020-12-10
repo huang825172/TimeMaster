@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">TimeMaster</string>
+    <string name="app_name_zh">时间管理大师</string>
+    <string name="TodayPageTitle">今日待办</string>
+    <string name="FuturePageTitle">未来待办</string>
+    <string name="MinePageTitle">个人信息</string>
+    <string name="Login">登录</string>
+    <string name="Login_en">Login</string>
+    <string name="Register">注册</string>
+    <string name="Register_en">Register</string>
+    <string name="Name_en">Name</string>
+    <string name="Email_en">Email</string>
+    <string name="Password_en">Password</string>
+    <string name="NoAccount">还没有账号</string>
+    <string name="HadAccount">已经有账号？</string>
+    <string name="GoRegister">注册一个</string>
+    <string name="GoLogin">前往登录</string>
+    <string name="AddSchedule">添加自定义日程</string>
+    <string name="ScheduleTitle">事件名称</string>
+    <string name="ScheduleSubtitle">地点</string>
+    <string name="Importance">重要性</string>
+    <string name="ImportSheet">导入课程表</string>
+    <string name="Arrange">智能安排</string>
+    <string name="timeExample">10:10 – 11:30</string>
+    <string name="titleExample">口译（1）</string>
+    <string name="subtitleExample">北六教A311</string>
+    <string name="Username_en">Username</string>
+    <string name="Trash">回收站</string>
+    <string name="NightMode">夜间模式</string>
+    <string name="Feedback">意见反馈</string>
+    <string name="Contact">联系客服</string>
+    <string name="PhoneExample">400-000-0000</string>
+    <string name="Banner">BANNER</string>
+    <string name="Back">BACK</string>
+    <string name="Add">ADD</string>
+    <string-array name="importance_array">
+        <item>重要紧急</item>
+        <item>紧急但不重要</item>
+        <item>重要但不紧急</item>
+        <item>不重要不紧急</item>
+    </string-array>
+</resources>

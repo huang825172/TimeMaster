@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tabs.MineFragment">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/MineAvatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="40dp" />
+
+    <TextView
+        android:id="@+id/MineName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/Username_en"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toRightOf="@id/MineAvatar"
+        app:layout_constraintTop_toTopOf="@id/MineAvatar" />
+
+    <View
+        android:id="@+id/MineOptions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/semi_round_panel"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/MineAvatar" />
+
+    <TextView
+        android:id="@+id/MineTrash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/Trash"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toTopOf="@id/MineOptions" />
+
+    <View
+        android:id="@+id/MineTrashBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineTrash" />
+
+    <TextView
+        android:id="@+id/MineNight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/NightMode"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineTrash" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/MineNightSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintBottom_toTopOf="@id/MineNightBottom"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MineTrashBottom" />
+
+    <View
+        android:id="@+id/MineNightBottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineNight" />
+
+    <TextView
+        android:id="@+id/MineFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/Feedback"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineNight" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineFeedback" />
+
+    <TextView
+        android:id="@+id/MineContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/Contact"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineFeedback" />
+
+    <TextView
+        android:id="@+id/MineContactPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3sp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/PhoneExample"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/MineContact" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintLeft_toLeftOf="@id/MineOptions"
+        app:layout_constraintTop_toBottomOf="@id/MineContact" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
