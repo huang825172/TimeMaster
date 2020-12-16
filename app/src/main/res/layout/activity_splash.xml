@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".SplashActivity">
 
     <ImageView
         android:id="@+id/SplashBanner"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="200dp"
         android:contentDescription="@string/Banner"
-        android:src="@mipmap/banner"
+        android:src="@mipmap/splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textColor="@color/white"
         android:id="@+id/SplashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
