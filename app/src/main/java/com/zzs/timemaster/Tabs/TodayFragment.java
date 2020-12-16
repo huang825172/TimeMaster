@@ -1,7 +1,6 @@
 package com.zzs.timemaster.Tabs;
 
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -9,69 +8,70 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.zzs.timemaster.MyOpenHelper;
 import com.zzs.timemaster.Models.Arrangement;
 import com.zzs.timemaster.Models.Event;
+import com.zzs.timemaster.MyOpenHelper;
 import com.zzs.timemaster.R;
 import com.zzs.timemaster.databinding.FragmentTodayBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Objects;
 
 public class TodayFragment extends Fragment {
 
     FragmentTodayBinding binding;
 
     ArrayList<Arrangement> schedules = new ArrayList<>();
-    private Context nContext;
     TextView time2;
 
     public TodayFragment() {
     }
+
     public ArrayList<Event> getData() {
-        ArrayList<Event> events=new ArrayList<>();
+        ArrayList<Event> events = new ArrayList<>();
         MyOpenHelper myHelper = new MyOpenHelper(getContext(), MyOpenHelper.DB_NAME, null, 1);
         SQLiteDatabase db = myHelper.getWritableDatabase();
-        Cursor c = db.query(MyOpenHelper.TABLE_NAME, new String[] {
-                        MyOpenHelper.EVENT_NAME, MyOpenHelper.EVENT_LOCATION,MyOpenHelper.TIME, }, null,null,
+        Cursor c = db.query(MyOpenHelper.TABLE_NAME, new String[]{
+                        MyOpenHelper.EVENT_NAME, MyOpenHelper.EVENT_LOCATION, MyOpenHelper.TIME,}, null, null,
                 null, null, null);
-        int nameIndex=c.getColumnIndex(MyOpenHelper.EVENT_NAME);
-        int locationIndex=c.getColumnIndex(MyOpenHelper.EVENT_LOCATION);
-        int timeIndex=c.getColumnIndex(MyOpenHelper.TIME);
+        int nameIndex = c.getColumnIndex(MyOpenHelper.EVENT_NAME);
+        int locationIndex = c.getColumnIndex(MyOpenHelper.EVENT_LOCATION);
+        int timeIndex = c.getColumnIndex(MyOpenHelper.TIME);
 
-        while(c.moveToNext()){
+        while (c.moveToNext()) {
             String name = c.getString(nameIndex);
             String location = c.getString(locationIndex);
-            String time=c.getString(timeIndex);
-            Event event=new Event(time,name,location);
+            String time = c.getString(timeIndex);
+            Event event = new Event(time, name, location);
             events.add(event);
         }
         db.close();
         return events;
     }
 
-    public void loadArrangement(){
-        ArrayList<Event>events=getData();
-        SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMdd");
-        String date=simpleDateFormat.format(new Date());
-        String []Words={"一","二","三","四","五","六","七","八","九","十"};
-        int count=0;
-        for(Event event: events){
-            if(event.getEvent_time().equals(date)){
-                schedules.add(new Arrangement("今日事项"+Words[count]+": ", event.getEvent_name(), event.getEvent_location()));
-                count++;}
+    public void loadArrangement() {
+        ArrayList<Event> events = getData();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        String date = simpleDateFormat.format(new Date());
+        String[] Words = {"一", "二", "三", "四", "五", "六", "七", "八", "九", "十"};
+        int count = 0;
+        for (Event event : events) {
+            if (event.getEvent_time().equals(date)) {
+                schedules.add(new Arrangement("今日事项" + Words[count] + ": ", event.getEvent_name(), event.getEvent_location()));
+                count++;
+            }
 
         }
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,17 +136,19 @@ public class TodayFragment extends Fragment {
 
     @Override
     public void onResume() {
-        this.nContext=getActivity();
+        Context nContext = getActivity();
         super.onResume();
-        FutureFragment futureFragment=new FutureFragment();
-        boolean eventChange=futureFragment.isChanged;
-        futureFragment.isChanged=false;
-        if(eventChange){
+        boolean eventChange = FutureFragment.isChanged;
+        FutureFragment.isChanged = false;
+        if (eventChange) {
             schedules.clear();
             loadArrangement();
-            time2=getView().findViewById(R.id.TodayItemTime);
-            time2.setText(time2.getText().toString());
-//        Toast.makeText(nContext,"已更新",Toast.LENGTH_SHORT).show();
+            try {
+                time2 = Objects.requireNonNull(getView()).findViewById(R.id.TodayItemTime);
+                time2.setText(time2.getText().toString());
+            } catch (NullPointerException e) {
+                e.printStackTrace();
             }
+        }
     }
 }

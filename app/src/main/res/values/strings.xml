@@ -33,6 +33,8 @@
     <string name="Banner">BANNER</string>
     <string name="Back">BACK</string>
     <string name="Add">ADD</string>
+    <string name="Time">时间</string>
+    <string name="TimeInput">输入时间</string>
     <string-array name="importance_array">
         <item>重要紧急</item>
         <item>紧急但不重要</item>

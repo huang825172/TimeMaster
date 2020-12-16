@@ -1,4 +1,4 @@
-package com.zzs.timemaster.Features;
+package com.zzs.timemaster;
 
 import android.content.ContentValues;
 import android.content.Context;
