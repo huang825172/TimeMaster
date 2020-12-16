@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     tools:context=".Features.RegisterActivity">
 
     <ImageView
         android:id="@+id/RegisterImg"
+
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:src="@mipmap/banner"
@@ -17,6 +19,7 @@
 
     <TextView
         android:id="@+id/RegisterTitle"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -28,10 +31,12 @@
 
     <EditText
         android:id="@+id/RegisterNameInput"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:hint="@string/Name_en"
         android:inputType="textPersonName"
         android:maxLines="1"
@@ -42,34 +47,21 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/RegisterEmailInput"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/Email_en"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/RegisterNameInput"
-        android:autofillHints="" />
-
-    <EditText
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:id="@+id/RegisterPasswordInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
+        android:autofillHints=""
         android:hint="@string/Password_en"
         android:inputType="textPassword"
         android:maxLines="1"
         android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/RegisterNameInput"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/RegisterEmailInput"
-        android:autofillHints="" />
+        tools:layout_editor_absoluteY="499dp" />
 
     <TextView
         android:id="@+id/RegisterLoginHint"
@@ -79,6 +71,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/HadAccount"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RegisterPasswordInput" />
 
