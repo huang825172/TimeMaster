@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.sqllite.MyOpenHelper;
+import com.zzs.timemaster.MyOpenHelper;
 import com.zzs.timemaster.Models.Arrangement;
 import com.zzs.timemaster.Models.Event;
 import com.zzs.timemaster.R;
